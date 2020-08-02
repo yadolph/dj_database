@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load haslte %}
+{% block title %}Телефон{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Телефон</h1>
+                <table cellpadding="5px">
+                    <thead>
+                        <tr>
+                            <th>Фото</th>
+                            <th>Название</th>
+                            <th>Дата выпуска</th>
+                            <th>LTE</th>
+                            <th>Цена</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td><img src="{{ product.image }}" height="150px"/></td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.release_date }}</td>
+                            <td>{{ product.lte_exists|haslte }}</td>
+                            <td>{{ product.price }}</td>
+                        </tr>
+                </table>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+{% endblock %}

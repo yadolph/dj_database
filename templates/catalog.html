@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load haslte %}
+{% block title %}Каталог{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1><a href="/catalog">Каталог</a></h1>
+        </div>
+
+        <div class="sort-block">
+            Отсортировать по:
+            <a href="?sort=alphabetic">Алфавиту</a>&nbsp;
+            <a href="?sort=min_price">Возрастанию цены</a>&nbsp;
+            <a href="?sort=max_price">Убыванию цены</a>
+            <p>&nbsp;</p>
+        </div>
+
+        <div class="content">
+            <table cellpadding="5px">
+                <thead>
+                    <tr>
+                        <th>Фото</th>
+                        <th>Название</th>
+                        <th>Дата выпуска</th>
+                        <th>LTE</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                {% for row in phones %}
+                    <tr>
+                        <td><img src="{{ row.image }}" height="150px"/></td>
+                        <td><a href="{{ row.slug }}">{{ row.name }}</a></td>
+                        <td>{{ row.release_date }}</td>
+                        <td>{{ row.lte_exists|haslte }}</td>
+                        <td>{{ row.price }} &#8381</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

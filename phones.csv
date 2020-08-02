@@ -1,0 +1,7 @@
+id;name;image;price;release_date;lte_exists
+1;Samsung Galaxy Edge 2;https://avatars.mds.yandex.net/get-mpic/364668/img_id5636027222104023144.jpeg/orig;73000;2016-12-12;True;
+2;Iphone X;https://avatars.mds.yandex.net/get-mpic/200316/img_id270362589725797013.png/orig;80000;2017-06-01;True;
+3;Nokia 8;https://avatars.mds.yandex.net/get-mpic/397397/img_id6752445806321208103.jpeg/orig;20000;2013-01-20;False;
+4;OnePlus 8;https://avatars.mds.yandex.net/get-mpic/1901070/img_id8305871146975991991.png/orig;46450;2020-04-14;True
+5;Xiaomi Redmi 9;https://avatars.mds.yandex.net/get-mpic/1592982/img_id2898195952378331843.jpeg/orig;13990;2020-07-30;True
+6;Nokia 3310;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nokia_3310.png/120px-Nokia_3310.png;1000;2000-09-01;False
