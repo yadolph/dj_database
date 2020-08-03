@@ -4,14 +4,15 @@ from .models import Phone
 def show_catalog(request):
     order = request.GET.get('sort')
     template = 'catalog.html'
-    phones = Phone.objects.all().values()
-
+    phones = []
     if order == 'min_price':
-        phones = sorted(phones, key = lambda k: k['price'])
+        phones = Phone.objects.all().order_by('price').values()
     elif order == 'max_price':
-        phones = sorted(phones, key=lambda k: k['price'], reverse=True)
+        phones = Phone.objects.all().order_by('-price').values()
     elif order == 'alphabetic':
-        phones = sorted(phones, key=lambda k: k['name'])
+        phones = Phone.objects.all().order_by('name').values()
+    else:
+        phones = Phone.objects.all().values()
 
     context = {'phones': phones}
     return render(request, template, context)
